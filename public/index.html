@@ -1,0 +1,343 @@
+<!--
+======================================================================
+    Name        : index.html
+    Author      : xiayudev
+    Date        : 2022.06.22 -- Wednesday at 18:29:00
+    Copyright   : COPYRIGHT
+    Description : This file is about learning tailwind.
+
+======================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en" x-data="{dark:false}" x-bind:class="dark ? 'dark' : ''">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="robots" content="index,follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="learning tailwind" />
+		<link
+			rel="icon"
+			sizes="192x192"
+			href="https://cdn.freebiesupply.com/logos/large/2x/linux-tux-1-logo-png-transparent.png"
+		/>
+		<link rel="stylesheet" href="./css/tailwind.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/fc21a592b3.js"
+			crossorigin="anonymous"
+			defer
+		></script>
+		<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<title>Platzi Travel</title>
+	</head>
+
+	<body class="font-Montserrat dark:bg-gray-900">
+		<header class="w-full h-14 hidden lg:flex z-20 fixed">
+			<nav class="w-full h-full bg-white flex p-4 justify-between dark:bg-gray-800">
+				<div class="w-auto h-auto inline-block">
+					<p class="text-xl text-primary dark:text-white font-black">Platzi Travel</p>
+				</div>
+				<div class="flex space-x-8">
+					<a class="font-bold text-base text-primary dark:text-white" href="#home"
+						>Home</a
+					>
+					<a class="font-bold text-base text-primary dark:text-white" href="#recommended"
+						>Recommended</a
+					>
+					<a
+						class="font-bold text-base text-primary dark:text-white"
+						href="#trending-stays"
+						>Stays</a
+					>
+					<a class="font-bold text-base text-primary dark:text-white" href="#faqs"
+						>FAQs</a
+					>
+					<a class="font-bold text-base text-primary dark:text-white" href="#about-us"
+						>About us</a
+					>
+				</div>
+				<div class="flex space-x-4">
+					<a href="#trending-stays">
+						<i
+							class="fa-solid fa-magnifying-glass w-5 h-5 text-primary dark:text-white"
+						></i>
+					</a>
+					<button @click="dark=!dark" class="outline-none">
+						<i class="fa-solid fa-moon w-5 h-5 text-primary"></i>
+					</button>
+					<a href="#">
+						<i class="fa-solid fa-user w-5 h-5 text-gray-200 dark:text-white"></i>
+					</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="w-full h-auto">
+				<div class="w-full lg:h-[500px]" id="home">
+					<div class="w-full h-3/4 lg:h-full relative">
+						<div
+							class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center z-10 lg:space-y-0 lg:justify-center"
+						>
+							<input
+								class="outline-none py-3 px-4 rounded-3xl shadow-md transition-all duration-500 ease-in-out focus-within:shadow-sm focus:ring-2 ring-primary focus:w-11/12 lg:hidden"
+								type="search"
+								placeholder="San Francisco"
+							/>
+							<div class="hidden h-auto lg:w-1/4 lg:flex pb-6 lg:self-start lg:ml-16">
+								<p class="text-4xl font-bold">Find more locations like this one</p>
+							</div>
+							<button
+								class="w-48 bg-white text-lg text-primary p-4 font-semibold rounded-full shadow-sm hover:scale-110 hover:text-white hover:bg-primary transition ease-in-out duration-500 lg:self-start lg:ml-16 dark:text-black"
+							>
+								Explore
+							</button>
+						</div>
+						<div
+							class="w-full h-full lg:h-full lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center lg:bg-no-repeat"
+						>
+							<img
+								class="lg:hidden"
+								src="./imgs/sanFrancisco.jpg"
+								alt="Imagen de San Francisco"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="p-6" id="recommended">
+					<p class="font-semibold text-2xl text-primary dark:text-white">
+						Our Recommendations
+					</p>
+					<div
+						class="w-auto h-72 flex items-center mt-2 p-8 overflow-x-auto overflow-y-hidden overscroll-x-contain space-x-6 snap-x snap-proximity"
+					>
+						<div class="card">
+							<div class="w-full h-3/5 rounded-t-lg bg-norway bg-cover"></div>
+							<div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+								<p class="text-white text- font-bold px-4 py-2">Norway</p>
+								<p class="text-white text-xs px-4 dark:text-gray-300">
+									Beautiful landscapes
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="w-full h-3/5 rounded-t-lg bg-new_york bg-cover"></div>
+							<div class="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+								<p class="text-terciary text- font-bold px-4 py-2 dark:text-white">
+									New York
+								</p>
+								<p class="text-terciary text-xs px-4 dark:text-gray-300">
+									Concrete jungle
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="w-full h-3/5 rounded-t-lg bg-yosemite bg-cover"></div>
+							<div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+								<p class="text-white text- font-bold px-4 py-2">Yosemite</p>
+								<p class="text-white text-xs px-4 dark:text-gray-300">
+									A break from the world
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="w-full h-3/5 rounded-t-lg bg-seattle bg-cover"></div>
+							<div class="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+								<p class="text-terciary text- font-bold px-4 py-2 dark:text-white">
+									Seatle
+								</p>
+								<p class="text-terciary text-xs px-4 dark:text-gray-300">
+									Big city
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div class="w-full h-3/5 rounded-t-lg bg-switzerland bg-cover"></div>
+							<div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+								<p class="text-white text- font-bold px-4 py-2">Switzerland</p>
+								<p class="text-white text-xs px-4 dark:text-gray-300">Big city</p>
+							</div>
+						</div>
+						<div class="card">
+							<div
+								class="w-full h-3/5 rounded-t-lg bg-sydney bg-cover bg-center"
+							></div>
+							<div class="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+								<p class="text-terciary text- font-bold px-4 py-2 dark:text-white">
+									Sydney
+								</p>
+								<p class="text-terciary text-xs px-4 dark:text-gray-300">
+									Conoce la famosísima opera
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div
+								class="w-full h-3/5 rounded-t-lg bg-europe bg-cover bg-center"
+							></div>
+							<div class="w-full h-2/5 bg-secondary rounded-b-lg dark:bg-gray-700">
+								<p class="text-white text- font-bold px-4 py-2">Edimburgo</p>
+								<p class="text-white text-xs px-4 dark:text-gray-300">
+									Conoce los castillos medievales
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<div
+								class="w-full h-3/5 rounded-t-lg bg-iceland bg-cover bg-center"
+							></div>
+							<div class="w-full h-2/5 bg-white rounded-b-lg dark:bg-gray-800">
+								<p class="text-terciary text- font-bold px-4 py-2 dark:text-white">
+									Iceland
+								</p>
+								<p class="text-terciary text-xs px-4 dark:text-gray-300">
+									Big city
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="px-6 w-full h-auto" id="trending-stays">
+					<p class="text-2xl text-primary font-semibold pb-6 dark:text-white">
+						Trending Stays
+					</p>
+					<div
+						class="w-full h-full flex flex-col space-y-8 align-center justify-center pb-4 lg:grid lg:grid-cols-5 lg:grid-rows-4 lg:space-y-0 lg:gap-4 lg:px-8"
+					>
+						<div
+							class="w-full h-96 lg:h-full rounded-lg bg-chicago bg-cover bg-no-repeat bg-center lg:row-start-1 lg:row-end-3 lg:col-span-5"
+						>
+							<p class="card-title lg:text-right lg:pr-40 lg:pt-20">Chicago</p>
+							<p
+								class="text-white lg:font-medium text-base pl-8 mr-24 lg:text-xl lg:text-right lg:mr-0 lg:pr-40"
+							>
+								2 rooms, bathroom and kitchen.
+							</p>
+						</div>
+						<div
+							class="w-full h-96 lg:h-full rounded-lg bg-LA bg-cover bg-no-repeat bg-center lg:row-start-3 lg:row-span-2 lg:col-span-2 lg:flex lg:flex-col lg:items-end"
+						>
+							<p class="card-title lg:text-right lg:pr-10">Los Angeles</p>
+							<p
+								class="text-white w-full text-base pl-8 mr-24 lg:text-xl lg:text-right lg:pr-10 lg:w-[300px] lg:mr-0 lg:font-medium"
+							>
+								4 rooms, 3 bathrooms, kitchen and private pool.
+							</p>
+						</div>
+						<div
+							class="w-full h-96 rounded-lg bg-miami bg-cover bg-no-repeat bg-center lg:col-start-3 lg:col-span-3 lg:row-start-3 lg:flex lg:flex-col lg:items-end"
+						>
+							<p class="card-title lg:text-right lg:pr-40">Miami</p>
+							<p
+								class="text-white text-base pl-8 mr-24 lg:text-right lg:text-xl lg:w-[500px] lg:mr-0 lg:pr-40 lg:font-medium"
+							>
+								3 rooms, 2 bathrooms, kitchen and amazing sea view.
+							</p>
+						</div>
+						<div
+							class="w-full h-96 rounded-lg bg-bali bg-cover bg-no-repeat bg-center lg:row-start-4 lg:col-start-3 lg:col-span-3 lg:flex lg:flex-col lg:items-end"
+						>
+							<p class="card-title pt-20 lg:text-right lg:pr-40">Bali</p>
+							<p
+								class="text-white text-base pl-8 mr-24 lg:text-xl lg:w-[450px] lg:text-right lg:mr-0 lg:pr-40 lg:font-medium"
+							>
+								2 rooms, 2 bathrooms, kitchen and private pool.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="w-full h-auto" id="faqs">
+					<div class="w-full h-full px-6 flex flex-col space-y-4 py-4">
+						<p class="text-2xl text-primary font-semibold dark:text-white">FAQs</p>
+						<div>
+							<p class="text-lg font-semibold text-primary dark:text-white">
+								Payment Methods
+							</p>
+							<p class="text-base pt-2 dark:text-gray-300">
+								We accept VISA, MasterCard, American Express, Paypal and Binance
+							</p>
+						</div>
+						<div>
+							<p class="text-lg font-semibold text-primary dark:text-white">
+								Cancellation Policy
+							</p>
+							<p class="text-base pt-2 dark:text-gray-300">
+								We accept VISA, MasterCard, American Express, Paypal and Binance
+							</p>
+						</div>
+						<div>
+							<p class="text-lg font-semibold text-primary dark:text-white">
+								Long Stays
+							</p>
+							<p class="text-base pt-2 dark:text-gray-300">
+								We accept VISA, MasterCard, American Express, Paypal and Binance. We
+								accept VISA, MasterCard, American Express, Paypal and Binance.
+							</p>
+						</div>
+						<div>
+							<p class="text-lg font-semibold text-primary dark:text-white">
+								Cancellation Policy
+							</p>
+							<p class="text-base pt-2 dark:text-gray-300">
+								We accept VISA, MasterCard, American Express, Paypal and Binance
+							</p>
+						</div>
+						<div class="lg:border-b lg:pb-8 lg:border-black dark:border-gray-300">
+							<p class="text-lg font-semibold text-primary dark:text-white">
+								Cancellation Policy
+							</p>
+							<p class="text-base pt-2 dark:text-gray-300">
+								We accept VISA, MasterCard, American Express, Paypal and Binance
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer
+			id="about-us"
+			class="w-full h-auto text-gray-300 px-6 pt-4 pb-20 bg-gray-50 space-y-2 lg:pb-6 dark:bg-gray-900"
+		>
+			<p class="text-lg">About us</p>
+			<p class="text-sm">Investors</p>
+			<p class="text-sm">Jobs</p>
+			<p class="text-sm">Privacy policy</p>
+			<p class="text-sm">Terms and conditions</p>
+			<p class="text-sm">Platzi travel, Inc.</p>
+			<p class="text-sm">Follow us</p>
+			<div class="w-12 h-auto flex justify-between items-center">
+				<a href="https://twitter.com">
+					<i class="fa-brands fa-twitter text-lg"></i>
+				</a>
+				<a href="https://instagram.com">
+					<i class="fa-brands fa-instagram text-2xl"></i>
+				</a>
+			</div>
+		</footer>
+		<div
+			id="tab-bar"
+			class="w-full h-16 bg-primary shadow-md bottom-0 fixed flex items-center justify-evenly px-6 rounded-t-lg lg:hidden dark:bg-gray-800"
+		>
+			<a href="#home">
+				<i class="fa-solid fa-house w-8 h-8 text-white"></i>
+			</a>
+			<a href="#trending-stays">
+				<i class="fa-solid fa-magnifying-glass w-8 h-8 text-black dark:text-primary"></i>
+			</a>
+			<a href="#recommended">
+				<i class="fa-solid fa-heart w-8 h-8 text-white"></i>
+			</a>
+			<button @click="dark=!dark" class="outline-none">
+				<i class="fa-solid fa-moon w-8 h-8 text-white dark:text-primary"></i>
+			</button>
+			<a href="#">
+				<i class="fa-solid fa-user w-8 h-8 text-white"></i>
+			</a>
+		</div>
+	</body>
+</html>

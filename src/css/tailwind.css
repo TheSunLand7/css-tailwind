@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.card {
+		@apply w-48 lg:w-52 h-64 shadow-md rounded-lg shrink-0 snap-center hover:-translate-y-3 hover:cursor-pointer hover:shadow-xl transition-all ease-in-out duration-500;
+	}
+	.card-title {
+		@apply text-white text-3xl px-8 pt-8 pb-2 font-semibold;
+	}
+}
